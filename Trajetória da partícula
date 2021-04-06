@@ -1,0 +1,43 @@
+    #include <stdio.h>
+    #include <math.h>
+    int main(void)
+    {
+        int A, B, C;
+        double Delta, X1, X2, Lag;
+        scanf("%lf %d %d %d", &Lag, &A, &B, &C);
+        Delta = (pow(B,2) - 4.0 * A * C);
+        if (Delta < 0)
+        {
+            printf("POSICOES IMAGINARIAS\n");
+        }
+        else
+        {
+            if (Delta > 0)
+            {
+                X1 = ((B*(-1.0)) + sqrt(Delta)) / (2.0 * A);
+                X2 = ((B*(-1.0)) - sqrt(Delta)) / (2.0 * A);
+                printf("POSICOES: x1=%.2lf e x2=%.2lf", X1, X2);
+            }
+            else
+            {
+                X1 = B*(-1.0) / (2.0 * A);
+                printf("POSICOES: x1=%.2lf e x2=%.2lf", X1, X1);
+            }
+            
+            
+            if ((X1 > (Lag / 2.0)) || (X2 > (Lag / 2.0)) || (X1 < ((Lag / 2.0) * -1)) || (X2 < ((Lag / 2.0) * -1))) 
+            {
+                printf(" (FORA DO EXPERIMENTO)");
+            }
+            printf("\n");
+            if ((A + B + C) % 3 == 0)
+            {
+                printf("FATO 1: DESAPARECIDA\n");
+            }
+            if ((C % 2 == 0) && (A + B > C))
+            {
+                printf("FATO 2: ORIGEM\n");
+            }
+        }
+        return 0; 
+    }
