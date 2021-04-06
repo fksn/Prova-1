@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main(void)
+{
+    double Num1, Num2, Resp;
+    char OP, IG;
+    scanf("%lf %c %lf %c %lf", &Num1, &OP, &Num2, &IG, &Resp);
+    if (OP == '+')
+    {
+        if (Num1 + Num2 == Resp) printf("CORRETO\n");
+        else printf("ERRADO! O resultado deveria ser: %.6lf\n", Num1 + Num2);
+    }
+    else
+    {
+        if (OP == '-')
+        {
+            if (Num1 - Num2 == Resp) printf("CORRETO\n");
+            else printf("ERRADO! O resultado deveria ser: %.6lf\n", Num1 - Num2);
+        }
+        else
+        {
+            if (OP == '*')
+            {
+                if (Num1 * Num2 == Resp) printf("CORRETO\n");
+                else printf("ERRADO! O resultado deveria ser: %.6lf\n", Num1 * Num2);
+            }
+            else
+            {
+                if (Num1 / Num2 == Resp) printf("CORRETO\n");
+                else printf("ERRADO! O resultado deveria ser: %.6lf\n", Num1 / Num2);
+            }
+        }
+    }
+    
+    
+    
+    //printf("%lf %c %lf %c %lf", Num1, OP, Num2, IG, Resp);
+    return 0;
+}
